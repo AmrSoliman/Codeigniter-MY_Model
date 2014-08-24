@@ -18,7 +18,8 @@ $this->post->get_all();
 $this->post->get(1);
 $this->post->get_by('title', 'Pigs CAN Fly!');
 $this->post->get_many_by('status', 'open');
-
+$this->post->like('keywords', 'value')->get_all();
+$this->post->or_like('title', 'pigs')->get_all();
 $this->post->insert(array(
     'status' => 'open',
     'title' => "I'm too sexy for my shirt"

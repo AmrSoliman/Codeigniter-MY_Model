@@ -768,6 +768,22 @@ class MY_Model extends CI_Model
         $this->_database->limit($limit, $offset);
         return $this;
     }
+    
+      /**
+     * A wrapper to $this->_database->like()
+     */
+    public function like($column, $value ) {
+        $this->_database->like($column, $value , "both");
+        return $this;
+    }
+    
+    /**
+     * A wrapper to $this->_database->like()
+     */
+    public function or_like($column, $value ) {
+        $this->_database->or_like($column, $value , "both");
+        return $this;
+    }
 
     /* --------------------------------------------------------------
      * INTERNAL METHODS
